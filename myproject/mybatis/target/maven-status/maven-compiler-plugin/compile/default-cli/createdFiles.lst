@@ -1,0 +1,9 @@
+com\weima\App.class
+com\weima\service\girlMapperImpl.class
+com\weima\log\getLog.class
+com\weima\entity\Girl.class
+com\weima\mapper\targetMapper.class
+com\weima\db\DBAccess.class
+com\weima\mapper\girlMapper.class
+com\weima\controller.class
+com\weima\mapper\sourceMapper.class

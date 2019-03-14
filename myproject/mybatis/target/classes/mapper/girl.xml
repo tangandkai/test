@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.weima.mapper.girlMapper">
+    <select id="findAll" resultType="Girl">
+        select * from girl
+    </select>
+    
+    <insert id="insert" parameterType="Girl">
+        insert into girl(id, name, age, cupsize, address, email)
+        values(#{id},#{name},#{age},#{cupsize},#{address},#{email});
+    </insert>
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.weima.mapper.tbControlCommandDistributionMapper">
+    <select id="findDistribute" resultType="tbCommand" >
+        select
+        device,
+        command,
+        count(case when cmd_state=2 then 1 else null end)as sucess_num,
+        round(nvl(avg(case when cmd_state=2 then total_time else null end),0),2)as avg_sucess_time,
+        count(case when cmd_state=3 then 1 else null end)as failed_num,
+        round(nvl(avg(case when cmd_state=3 then a.total_time else null end),0),2)as avg_failed_time,
+        count(case when cmd_state=3 then 1 else null end)as failed_useless_num,
+        round(nvl(avg(case when cmd_state=3 total_time else null end),0),2)as avg_failed_useless_time
+        from tb_control_command where last_update_date>=#{0} and last_update_date<![CDATA[ ]]>=#{1}
+        group by device,command
+    </select>
+
+</mapper>

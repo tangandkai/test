@@ -1,0 +1,29 @@
+phoenix:
+  enable: true
+  url: jdbc:phoenix:10.40.150.17,10.40.150.27,10.40.150.2,10.40.150.10:2181
+  type: com.alibaba.druid.pool.DruidDataSource
+  driver-class-name: org.apache.phoenix.jdbc.PhoenixDriver
+  default-auto-commit: true
+  maxActive: 20
+  maxWait: 60000
+  minIdle: 5
+  timeBetweenEvictionRunsMillis: 60000
+  minEvictableIdleTimeMillis: 60000
+  poolPreparedStatements: true
+  maxPoolPreparedStatementPerConnectionSize: 30
+  testWhileIdle: true
+  testOnBorrow: false
+  testOnReturn: false
+  initialSize: 1
+  validationQuery: SELECT 1 + 1 FROM RVM_BIGDATA_ENV
+  username:
+  password:
+
+server:
+  connection-timeout: 60000
+  port: 8081
+  address:
+
+#FROM RVM_BIGDATA_ENV
+#  url: jdbc:phoenix:10.40.150.17,10.40.150.27,10.40.150.2,10.40.150.10:2181
+#jdbc:phoenix:10.40.152.9,10.40.152.13,10.40.152.5:2181

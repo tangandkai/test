@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.weima.mapper.mapMapper">
+    <select id="findAll" resultType="VehicleMap">
+        select * from rvm_map_test
+    </select>
+
+    <insert id="insert" parameterType="VehicleMap">
+        insert into rvm_map_test(vin, tbox_time, latitude, longitude)
+        values(#{vin},#{tbox_time},#{latitude},#{longitude});
+    </insert>
+</mapper>
